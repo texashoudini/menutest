@@ -151,7 +151,7 @@ function library:new(props)
 		}
 	)
 	--
-        if (check_exploit == "Synapse" and syn.request) then
+        if (check_exploit == "Synapse" and syn and type(syn.protect_gui) == "function") then
 	syn.protect_gui(screen)
         end
 	-- 1
@@ -596,10 +596,10 @@ function library:loader(props)
 			DisplayOrder = 9999,
 			ResetOnSpawn = false,
 			ZIndexBehavior = "Global",
-			Parent = cre
-		}
+		Parent = cre
+	}
 	)
-        if (check_exploit == "Synapse" and syn.request) then
+        if (check_exploit == "Synapse" and syn and type(syn.protect_gui) == "function") then
 	syn.protect_gui(screen)
         end
 	--
